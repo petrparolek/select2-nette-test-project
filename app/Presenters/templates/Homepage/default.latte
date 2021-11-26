@@ -1,0 +1,35 @@
+{block content}
+	<div class="card-header">
+		test
+	</div>
+	<div class="card-body">
+		{control testForm}
+	</div>
+{/block}
+
+{define css}
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{/define}
+
+{define js}
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/contributte/live-form-validation@v1.9.0/live-form-validation.js"></script>
+	<script>
+		LiveForm.setOptions({
+			messageErrorPrefix: '',
+			controlErrorClass: 'is-invalid',
+			messageErrorClass: 'invalid-feedback',
+			controlValidClass: 'is-valid',
+			showValid: true,
+			showMessageClassOnParent: 'form-control is-invalid',
+			messageTag: 'span',
+			wait: 500
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('.select2-example').select2();
+		});
+	</script>
+{/define}
