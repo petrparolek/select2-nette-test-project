@@ -29,7 +29,12 @@
 
 	<script>
 		$(document).ready(function() {
-			$('.select2-example').select2();
+			//$('.select2-example').select2();
+			$('.select2-example').select2().on('change', function (e) {
+				let form = $(this).closest('form');
+				Nette.toggleForm(form[0], this);
+				Nette.validateControl(this);
+			});
 		});
 	</script>
 {/define}
